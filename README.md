@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Alumni Management Portal — UI
 
 A complete, responsive front-end for an alumni portal: public site, alumni area and admin area.
@@ -61,3 +62,6 @@ Replace imports from `src/data/mockData.js` with API calls, replace `login()` in
 
 ## Known limitations (frontend-only)
 No backend: login is a preview, saved data is per-browser, no email or server writes occur. Not yet done: admin pages other than the shared table were not redesigned individually, gallery lightbox, event registration flow, automated tests, Lighthouse run.
+=======
+# Alumniweb
+>>>>>>> 13ae424759c45b90fbcd81c1625070caf7d257a3
