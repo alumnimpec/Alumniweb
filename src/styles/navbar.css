@@ -1,4 +1,7 @@
-.nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); }
+/* NOTE: the blur lives on ::before, not on .nav. backdrop-filter on an element makes it the containing
+   block of position:fixed children, which collapsed the mobile menu panel to a thin strip. */
+.nav { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+.nav::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: rgba(255,255,255,.92); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
 .nav__inner { height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
 .nav__brand { display: flex; align-items: center; gap: .6rem; font-weight: 800; font-size: 1.15rem; color: var(--navy-900); text-decoration: none !important; }
 .nav__links { display: flex; align-items: center; gap: .25rem; list-style: none; margin: 0; padding: 0; }
@@ -7,6 +10,7 @@
 .nav__link.active { color: var(--purple-600); font-weight: 600; }
 .nav__link.active::after { content: ""; position: absolute; left: .85rem; right: .85rem; bottom: 2px; height: 2px; background: var(--purple-600); border-radius: 2px; }
 .nav__actions { display: flex; align-items: center; gap: .5rem; }
-.nav__toggle { display: none; background: none; border: 0; padding: .5rem; border-radius: 8px; cursor: pointer; color: var(--navy-900); }
-.nav__toggle:hover { background: var(--purple-50); }
+.nav__toggle { display: none; align-items: center; justify-content: center; width: 44px; height: 44px; padding: 0; background: transparent; border: 1px solid var(--border); border-radius: 10px; cursor: pointer; color: var(--navy-900); -webkit-tap-highlight-color: transparent; }
+.nav__toggle[aria-expanded="true"] { background: var(--purple-50); }
+@media (hover: hover) { .nav__toggle:hover { background: var(--purple-50); } }
 .nav__panel { display: flex; align-items: center; gap: var(--space-4); }

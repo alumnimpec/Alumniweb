@@ -5,13 +5,14 @@
 }
 @media (max-width: 860px) {
   .nav__toggle { display: inline-flex; }
-  .nav__panel { position: fixed; inset: var(--nav-h) 0 0 0; background: #fff; flex-direction: column; align-items: stretch; padding: var(--space-5); gap: var(--space-4); transform: translateX(100%); visibility: hidden; transition: transform .3s var(--ease), visibility .3s; overflow-y: auto; }
+  .nav__panel { position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0; height: calc(100vh - var(--nav-h)); height: calc(100dvh - var(--nav-h)); z-index: 99; background: var(--surface); border-top: 1px solid var(--border); flex-direction: column; align-items: stretch; justify-content: flex-start; padding: var(--space-5); gap: var(--space-4); transform: translateX(100%); visibility: hidden; transition: transform .3s var(--ease), visibility .3s; overflow-y: auto; overscroll-behavior: contain; }
   .nav__panel.open { transform: none; visibility: visible; }
   .nav__links { flex-direction: column; align-items: stretch; }
   .nav__link { padding: .9rem 1rem; font-size: 1.05rem; }
   .nav__link.active::after { display: none; }
   .nav__link.active { background: var(--purple-50); }
-  .nav__actions { flex-direction: column; align-items: stretch; }
+  .nav__actions { flex-direction: column; align-items: stretch; margin-top: auto; }
+  .nav__actions .btn { width: 100%; }
 
   .sidebar { position: fixed; inset: 0 auto 0 0; width: 292px; z-index: 200; transform: translateX(-100%); visibility: hidden; transition: transform .3s var(--ease), visibility .3s; box-shadow: var(--shadow-lg); }
   .sidebar.open { transform: none; visibility: visible; }
