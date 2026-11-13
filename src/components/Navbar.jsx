@@ -26,6 +26,20 @@ export default function Navbar({
   const { pathname } = useLocation();
 
   useEffect(() => setOpen(false), [pathname]);
+  // lock page scroll while the mobile menu is open
+  useEffect(() => {
+    if (!open) return undefined;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = prev; };
+  }, [open]);
+  // if the window grows past the mobile breakpoint, drop the open state
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 861px)');
+    const onChange = (e) => e.matches && setOpen(false);
+    mq.addEventListener?.('change', onChange);
+    return () => mq.removeEventListener?.('change', onChange);
+  }, []);
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && setOpen(false);
     document.addEventListener('keydown', onKey);

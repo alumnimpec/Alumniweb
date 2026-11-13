@@ -27,7 +27,7 @@ a { color: var(--indigo); }
 [data-theme="dark"] .table-wrap, [data-theme="dark"] .modal, [data-theme="dark"] .tab, [data-theme="dark"] .icon-btn,
 [data-theme="dark"] .quick, [data-theme="dark"] .sidebar__handle, [data-theme="dark"] .section--white { background: var(--surface); }
 [data-theme="dark"] .table th { background: var(--surface-2); }
-[data-theme="dark"] .nav { background: rgba(11,18,38,.88); }
+[data-theme="dark"] .nav::before { background: rgba(10,19,40,.92); }
 [data-theme="dark"] .dash__topbar { background: rgba(11,18,38,.8); border-bottom-color: var(--border); }
 [data-theme="dark"] .sidebar { background: linear-gradient(180deg, #0f1733, #0b1226); }
 [data-theme="dark"] .sidebar__user { background: var(--surface); }
