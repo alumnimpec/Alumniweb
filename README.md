@@ -1,4 +1,4 @@
-# Alumni Management Portal — UI
+# Alumni Management Portal - UI
 
 A complete, responsive front-end for an alumni portal: public site, alumni area and admin area.
 **UI only — there is no backend.** Data comes from `src/data/mockData.js` (fictional sample data) and
